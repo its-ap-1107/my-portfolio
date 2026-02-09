@@ -1,4 +1,5 @@
 import "./App.css";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -129,9 +130,7 @@ function App() {
         </section>
       </main>
 
-      <footer className="footer">
-        <p>&copy; 2026 Amol Padamwar. All rights reserved.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

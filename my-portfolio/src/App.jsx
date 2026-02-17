@@ -1,30 +1,28 @@
 import "./App.css";
 import Footer from "./assets/Footer";
+import Header from "./components/Header";
+
+const navLinks = [
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
+  { label: "Contact", href: "#contact" },
+];
 
 function App() {
   return (
     <div className="portfolio-container">
-      <header className="header">
-        <h1>Amol Padamwar</h1>
-        <p className="title">Software Developer</p>
-        <p className="subtitle">
-          Specialized in building scalable web applications
-        </p>
-
-        {/* Resume link */}
-        <a
-          href="/Amol_Padamwar_Resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="resume-btn"
-        >
-          Download Resume
-        </a>
-      </header>
+      <Header
+        name="Amol Padamwar"
+        title="Software Developer"
+        subtitle="Specialized in building scalable web applications"
+        navLinks={navLinks}
+      />
 
       <main>
         {/* About */}
-        <section className="about">
+        <section id="about" className="about">
           <h2>About Me</h2>
           <p>
             I am a software developer focused on building reliable, scalable,
@@ -35,7 +33,7 @@ function App() {
         </section>
 
         {/* Experience */}
-        <section className="experience">
+        <section id="experience" className="experience">
           <h2>Experience</h2>
 
           <div className="experience-item">
@@ -62,7 +60,7 @@ function App() {
         </section>
 
         {/* Projects */}
-        <section className="projects">
+        <section id="projects" className="projects">
           <h2>Projects</h2>
 
           <div className="project-item">
@@ -97,7 +95,7 @@ function App() {
         </section>
 
         {/* Skills */}
-        <section className="skills">
+        <section id="skills" className="skills">
           <h2>Skills</h2>
           <ul>
             <li>JavaScript (ES6+)</li>
@@ -111,7 +109,7 @@ function App() {
         </section>
 
         {/* Contact */}
-        <section className="contact">
+        <section id="contact" className="contact">
           <h2>Contact</h2>
           <p>Email: amol@example.com</p>
           <p>Phone: +91 XXXXXXXXXX</p>

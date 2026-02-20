@@ -91,6 +91,11 @@ body {
   border-color: var(--accent);
 }
 
+.nav-link.active {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 /* RESUME BUTTON */
 .resume-btn {
   display: inline-block;

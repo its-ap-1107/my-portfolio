@@ -1,229 +1,101 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+@import "tailwindcss";
 
-/* RESET + BASE */
-* {
-  box-sizing: border-box;
+@layer base {
+  body {
+    @apply m-0 bg-slate-950 text-slate-100 antialiased;
+  }
+
+  a {
+    @apply transition-colors;
+  }
 }
 
-:root {
-  --bg: #0b1020;
-  --surface: #151c31;
-  --surface-2: #1c2440;
-  --text: #e8ecff;
-  --muted: #b7c0e5;
-  --border: #5a6aa8;
-  --accent: #22d3ee;
-  --accent-2: #f59e0b;
-}
-
-body {
-  margin: 0;
-  font-family: "Roboto", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  background-color: var(--bg);
-  color: var(--text);
-}
-
-/* ROOT WRAPPER */
 #root {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+  @apply mx-auto max-w-6xl p-4 md:p-8;
 }
 
-/* PORTFOLIO LAYOUT */
-.portfolio-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
+@layer components {
+  .portfolio-container {
+    @apply flex flex-col gap-8;
+  }
 
-/* HEADER */
-.header {
-  background: var(--surface-2);
-  border: 3px solid var(--border);
-  box-shadow: 8px 8px 0 #070b17;
-  padding: 2rem;
-  text-align: center;
-}
+  .header {
+    @apply rounded-xl border border-slate-700 bg-slate-900 p-8 text-center shadow-lg;
+  }
 
-.header h1 {
-  font-size: 3rem;
-  margin: 0;
-}
+  .header h1 {
+    @apply m-0 text-4xl font-black tracking-tight text-slate-100 md:text-5xl;
+  }
 
-.header .title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: var(--accent);
-}
+  .title {
+    @apply mt-3 text-lg font-bold text-cyan-400;
+  }
 
-.header .subtitle {
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-  color: var(--muted);
-}
+  .subtitle {
+    @apply mt-1 text-sm text-slate-300 md:text-base;
+  }
 
-/* HEADER NAV */
-.header-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.7rem;
-  margin-bottom: 1.5rem;
-}
+  .header-nav {
+    @apply mt-6 flex flex-wrap justify-center gap-3;
+  }
 
-.nav-link {
-  display: inline-block;
-  background: #0f172a;
-  color: var(--text);
-  text-decoration: none;
-  font-weight: bold;
-  border: 2px solid var(--border);
-  box-shadow: 3px 3px 0 #070b17;
-  padding: 0.45rem 0.9rem;
-  transition:
-    transform 0.1s ease,
-    box-shadow 0.1s ease,
-    border-color 0.1s ease;
-}
+  .nav-link {
+    @apply rounded-md border border-slate-600 bg-slate-800 px-4 py-2 text-sm font-semibold text-slate-200 hover:border-cyan-400 hover:text-cyan-300;
+  }
 
-.nav-link:hover {
-  transform: translate(3px, 3px);
-  box-shadow: 0 0 0 #070b17;
-  border-color: var(--accent);
-}
+  .nav-link.active {
+    @apply border-cyan-400 text-cyan-300;
+  }
 
-.nav-link.active {
-  border-color: var(--accent);
-  color: var(--accent);
-}
+  .resume-btn {
+    @apply mt-6 inline-flex rounded-md border border-cyan-300 bg-cyan-400 px-5 py-2.5 text-sm font-bold text-slate-900 hover:bg-cyan-300;
+  }
 
-/* RESUME BUTTON */
-.resume-btn {
-  display: inline-block;
-  background: var(--accent);
-  color: #04101a;
-  padding: 0.8rem 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  border: 2px solid #0891b2;
-  box-shadow: 4px 4px 0 #070b17;
-  transition:
-    transform 0.1s ease,
-    box-shadow 0.1s ease;
-}
+  main {
+    @apply flex flex-col gap-8;
+  }
 
-.resume-btn:hover {
-  transform: translate(4px, 4px);
-  box-shadow: 0 0 0 #070b17;
-}
+  section {
+    @apply rounded-xl border border-slate-700 bg-slate-900 p-6 shadow-lg md:p-8;
+  }
 
-/* MAIN CONTENT */
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
+  section h2 {
+    @apply mb-4 inline-block border-b-2 border-cyan-400 pb-1 text-2xl font-bold text-slate-100 md:text-3xl;
+  }
 
-/* SECTIONS */
-section {
-  background: var(--surface);
-  border: 3px solid var(--border);
-  box-shadow: 8px 8px 0 #070b17;
-  padding: 2rem;
-}
+  section p {
+    @apply text-sm leading-7 text-slate-300 md:text-base;
+  }
 
-section h2 {
-  font-size: 2rem;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  border-bottom: 3px solid var(--accent);
-  display: inline-block;
-  padding-bottom: 0.3rem;
-}
+  .experience-item {
+    @apply mb-6 last:mb-0;
+  }
 
-/* EXPERIENCE */
-.experience-item {
-  margin-bottom: 1.5rem;
-}
+  .experience-item h3 {
+    @apply text-lg font-semibold text-slate-100 md:text-xl;
+  }
 
-.experience-item h3 {
-  margin: 0;
-  font-size: 1.3rem;
-}
+  .company {
+    @apply mt-1 text-sm font-semibold text-slate-400;
+  }
 
-.company {
-  font-weight: bold;
-  margin: 0.3rem 0 0.8rem;
-  color: var(--muted);
-}
+  .experience-item ul {
+    @apply mt-3 list-disc space-y-1 pl-6 text-slate-300;
+  }
 
-.experience-item ul {
-  padding-left: 1.2rem;
-}
+  .skills ul {
+    @apply mt-3 flex flex-wrap gap-3 p-0;
+  }
 
-/* PROJECTS */
-.project-item {
-  margin-bottom: 1.5rem;
-}
+  .skills li {
+    @apply list-none rounded-md border border-slate-600 bg-slate-800 px-3 py-1.5 text-sm font-semibold text-slate-200;
+  }
 
-.project-item h3 {
-  margin: 0;
-}
+  .contact a {
+    @apply font-semibold text-cyan-400 hover:text-cyan-300;
+  }
 
-.tech {
-  font-weight: bold;
-  margin: 0.5rem 0;
-  color: var(--accent-2);
-}
-
-.project-item a {
-  display: inline-block;
-  margin-top: 0.5rem;
-  background: var(--accent-2);
-  color: #1a1203;
-  padding: 0.4rem 0.8rem;
-  text-decoration: none;
-  border: 2px solid #b45309;
-  box-shadow: 3px 3px 0 #070b17;
-}
-
-.project-item a:hover {
-  transform: translate(3px, 3px);
-  box-shadow: 0 0 0 #070b17;
-}
-
-/* SKILLS */
-.skills ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-}
-
-.skills li {
-  background: #0f172a;
-  border: 2px solid var(--border);
-  box-shadow: 3px 3px 0 #070b17;
-  padding: 0.4rem 0.8rem;
-  font-weight: bold;
-}
-
-/* CONTACT LINKS */
-.contact a {
-  color: var(--accent);
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-/* FOOTER */
-.footer {
-  background: var(--surface-2);
-  border: 3px solid var(--border);
-  box-shadow: 8px 8px 0 #070b17;
-  padding: 1rem;
-  text-align: center;
-  font-weight: bold;
-  color: var(--muted);
+  .footer {
+    @apply rounded-xl border border-slate-700 bg-slate-900 p-4 text-center text-sm font-semibold text-slate-400 shadow-lg;
+  }
 }

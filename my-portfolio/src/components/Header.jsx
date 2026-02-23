@@ -1,5 +1,3 @@
-import { NavLink } from "react-router-dom";
-
 function Header({
   name,
   title,
@@ -15,16 +13,9 @@ function Header({
 
       <nav className="header-nav" aria-label="Primary navigation">
         {navLinks.map((link) => (
-          <NavLink
-            key={link.to}
-            to={link.to}
-            end={link.to === "/"}
-            className={({ isActive }) =>
-              isActive ? "nav-link active" : "nav-link"
-            }
-          >
+          <a key={link.href} href={link.href} className="nav-link">
             {link.label}
-          </NavLink>
+          </a>
         ))}
       </nav>
 

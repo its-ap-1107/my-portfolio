@@ -1,4 +1,3 @@
-import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./assets/Footer";
 import Header from "./components/Header";
@@ -10,12 +9,12 @@ import ProjectsPage from "./pages/ProjectsPage";
 import SkillsPage from "./pages/SkillsPage";
 
 const navLinks = [
-  { label: "Home", to: "/" },
-  { label: "About", to: "/about" },
-  { label: "Experience", to: "/experience" },
-  { label: "Projects", to: "/projects" },
-  { label: "Skills", to: "/skills" },
-  { label: "Contact", to: "/contact" },
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
+  { label: "Contact", href: "#contact" },
 ];
 
 function App() {
@@ -29,15 +28,24 @@ function App() {
       />
 
       <main>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/experience" element={<ExperiencePage />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/skills" element={<SkillsPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+        <div id="home">
+          <HomePage />
+        </div>
+        <div id="about">
+          <AboutPage />
+        </div>
+        <div id="experience">
+          <ExperiencePage />
+        </div>
+        <div id="projects">
+          <ProjectsPage />
+        </div>
+        <div id="skills">
+          <SkillsPage />
+        </div>
+        <div id="contact">
+          <ContactPage />
+        </div>
       </main>
 
       <Footer />

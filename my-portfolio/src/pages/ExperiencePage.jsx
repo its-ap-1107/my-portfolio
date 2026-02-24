@@ -5,23 +5,35 @@ function ExperiencePage() {
 
       <div className="experience-item">
         <h3>Software Developer Intern</h3>
-        <p className="company">XYZ Company - 2024 to Present</p>
+        <p className="company">Netwin Infosolutions - jan 2026 to Present</p>
         <ul>
-          <li>Built and maintained React-based user interfaces</li>
-          <li>Integrated REST APIs using Node.js and Express</li>
-          <li>Improved application performance and fixed production bugs</li>
+          <li>
+            {" "}
+            Contributed to full-stack product development using React, Node.js,
+            and Express in a production-scale envi ronment.
+          </li>
+          <li>
+            {" "}
+            Designed secure authentication flows using JWT with refresh token
+            strategies and role-based access control
+          </li>
+          <li>
+            Engineered PostgreSQL schemas and optimized queries reducing
+            database response latency by 25%.
+          </li>
+          <li>
+            {" "}
+            Built a Project Management System to track milestone completion,
+            sprint velocity, and delivery efficiency.
+          </li>
+          <li>
+            Applied advanced React optimizations including custom hooks,
+            memoization, and context performance tuning.
+          </li>
         </ul>
       </div>
 
-      <div className="experience-item">
-        <h3>Freelance Web Developer</h3>
-        <p className="company">Self-employed - 2023 to 2024</p>
-        <ul>
-          <li>Developed full-stack web applications for clients</li>
-          <li>Worked with React, Node.js, MongoDB, and REST APIs</li>
-          <li>Deployed applications using Docker and cloud platforms</li>
-        </ul>
-      </div>
+      
     </section>
   );
 }

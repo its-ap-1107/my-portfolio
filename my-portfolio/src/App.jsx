@@ -7,6 +7,8 @@ import ExperiencePage from "./pages/ExperiencePage";
 import HomePage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
 import SkillsPage from "./pages/SkillsPage";
+// import NeumorphButton from "./components/NeuMorphButton";
+// import CallToAction from "./components/CallToAction";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -46,6 +48,8 @@ function App() {
         <div id="contact">
           <ContactPage />
         </div>
+        {/* <NeumorphButton>click me</NeumorphButton>
+        <CallToAction /> */}
       </main>
 
       <Footer />
